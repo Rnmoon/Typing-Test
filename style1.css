@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+.wrapper {
+  width: 90vw;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.input-field {
+  opacity: 0;
+  z-index: -999;
+  padding: 20px;
+  width: 90vw;
+  height: 9vh;
+  position: absolute;
+  font-size: larger; 
+}
+
+.content-box {
+  padding: 13px 20px 0;
+  border-radius: 10px;
+  border: 1px solid #bfbfbf;
+}
+.typing-test {
+  max-height: 256px;
+  overflow-y: auto;
+}
+
+.typing-test::-webkit-scrollbar {
+  width: 0;
+}
+
+.typing-test p {
+  font-size: 41px;
+  text-align: justify;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+.typing-test p span {
+  position: relative;
+}
+
+.typing-test p span.correct {
+  color: #58f047;
+}
+
+.typing-test p span.incorrect {
+  color: red;
+  outline: 1px solid #fff;
+  background: #ffc0cb;
+  border-radius: 4px;
+}
+
+.typing-test p span.active {
+  color: #17b82a;
+}
+
+
+
+@keyframes blink {
+  50% { 
+    opacity: 1; 
+  }
+}
+
+.content {
+  margin-top: 17px;
+  display: flex;
+  padding: 12px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #bfbfbf;
+}
+
+.content button {
+  outline: none;
+  border: none;
+  width: 105px;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #17a2b8;
+  transition: transform 0.3s ease;
+}
+
+.content button:active {
+  transform: scale(0.97);
+}
+
+.content .result-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: calc(100% - 140px);
+  justify-content: space-between;
+}
+
+.result-details li {
+  display: flex;
+  height: 20px;
+  list-style: none;
+  position: relative;
+  align-items: center;
+}
+
+.result-details li:not(:first-child) {
+  padding-left: 22px;
+  border-left: 1px solid #bfbfbf;
+}
+
+.result-details li p {
+  font-size: 19px;
+}
+
+.result-details li span {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+@media (max-width: 745px) {
+  .wrapper {
+    padding: 20px;
+  }
+  .content-box {
+    padding: 10px 15px 0;
+  }
+  .typing-test p {
+    font-size: 19px;
+  }
+  .result-details li {
+    margin-bottom: 10px;
+  }
+  .content button {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+}
